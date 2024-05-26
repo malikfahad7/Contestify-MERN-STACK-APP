@@ -1,0 +1,59 @@
+/* Signup.css */
+.signup-container {
+  display: flex;
+  height: 100vh;
+}
+.green-section {
+  background-color: #28a745; /* Green background */
+  flex: 1;
+  max-width: 30%; /* 30% of the screen */
+}
+.form-section {
+  background-color: #28a745; /* Green background */
+  flex: 1;
+  display: flex; /* Added */
+  justify-content: center; /* Added */
+  align-items: center; /* Added */
+}
+
+.form-container {
+  width: 70%; /* Set width to occupy 70% of the screen */
+  padding: 20px;
+  background-color: #f8f9fa; /* Light background for the form section */
+}
+
+.form-container form {
+  width: 100%;
+  max-width: 400px; /* Adjust form width as needed */
+  padding: 30px; /* Added padding */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.custom-button {
+  transition: background-color 0.3s ease;
+}
+
+.custom-button:hover {
+  background-color: #0056b3; /* Change the hover color as needed */
+}
+
+.invalid-feedback {
+  display: block;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.italic-text {
+  font-style: italic;
+}

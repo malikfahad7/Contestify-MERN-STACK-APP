@@ -1,0 +1,76 @@
+.competition-form {
+  text-align: center;
+  margin: 20px auto;
+}
+
+.student-box1 {
+  display: inline-block;
+  width: 28%;
+  height: 550px;
+  border: 2px solid green;
+  padding: 20px;
+  margin: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-image: url(../public/imag1.jpeg);
+  background-size: cover;
+}
+.student-box2 {
+    display: inline-block;
+    width: 28%;
+    height: 550px;
+    border: 2px solid green;
+    padding: 20px;
+    margin: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-image: url(../public/image2.jpg);
+    background-size: cover;
+  }
+
+.student-box:hover {
+  background-color: #e6ffe6;
+}
+
+.question {
+  margin: 20px 0;
+}
+
+.submit-button {
+    margin-top: 20px;
+    width: 40%;
+    border-radius: 30px;
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.large-radio {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+  }
+
+.submit-button:hover {
+  background-color: darkgreen;
+}
+.homeTitle{
+    margin-top: 20px;
+    font-style: italic;
+    font-weight: 500;
+    color: #28a745;
+    margin-bottom: 30px;
+
+}
+h6{
+    cursor: pointer;
+
+    margin-top: 20px;
+    font-style: italic;
+    color: #28a745;
+}
+h6:hover {
+    color: black;
+}

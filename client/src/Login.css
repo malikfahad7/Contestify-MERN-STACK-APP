@@ -1,0 +1,52 @@
+/* Login.css */
+.login-container {
+  display: flex;
+  height: 100vh;
+}
+
+.green-section {
+  background-color: #28a745; /* Green background */
+  flex: 1;
+  max-width: 30%; /* 30% of the screen */
+}
+
+.form-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 2;
+  padding: 20px;
+  background-color: #f8f9fa; /* Light background for the form section */
+}
+
+.form-container {
+  width: 100%;
+  max-width: 500px; /* Increased width */
+  padding: 30px; /* Added padding */
+  background-color: white; /* Form background */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+  color: #28a745; /* Green text color */
+}
+
+.form-container .btn-primary {
+  background-color: #28a745;
+  border-color: #28a745;
+  width: 100%; /* Button takes full width */
+  height: 50px; /* Increased height */
+}
+
+.form-container .btn-primary:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+.invalid-feedback {
+  display: block;
+}
+.italic-text {
+  font-style: italic;
+}
