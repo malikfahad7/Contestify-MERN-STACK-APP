@@ -1,63 +1,57 @@
+
 import React, { useState } from 'react';
 import './ParticipateRequest.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from 'axios';
 
 function ParticipationRequestForm() {
-  const [name, setName] = useState('');
-  const [image, setImage] = useState(null);
+   const [file, setFile] = useState();
+   const [name, setName] = useState();
 
-  const handleNameChange = (e) => {
-    setName(e.target.value);
-  };
+     const handleSubmit= async (e)=>{
+      const formdata = new FormData();
+      formdata.append('file', file)
+      formdata.append('name', name)
+      
+     
+      try {
+        const result = await axios.post('http://localhost:3001/upload', formdata);
+        if (result.data === "Success") {
+          toast.success("Request Submitted.")
+        } else {
+          toast.error("Failed to send Request.");
+        }
+      } catch (err) {
+        console.error(err);
+        toast.error("An error occurred. Please try again later.");
+      }
 
-  const handleImageChange = (e) => {
-    setImage(e.target.files[0]);
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    if (!name || !image) {
-      toast.error('Please provide both name and image.');
-      return;
-    }
-    toast.success('Request Submitted.');
-    const formData = new FormData();
-    formData.append('name', name);
-    formData.append('image', image);
-
-    // try {
-    //   const response = await axios.post('/api/participation-request', formData);
-    //   console.log('Response:', response.data);
-    //   toast.success('Request submitted successfully!');
-    //   // Add success message or redirect after successful submission
-    // } catch (error) {
-    //   console.error('Error:', error);
-    //   toast.error('Error submitting the request.');
-    // }
-  };
-
+            
+     }
   return (
     <div className='main-body'>
       <div className="form-container">
         <h2 className="form-title">Participation Request Form</h2>
         <form onSubmit={handleSubmit} className="form-content">
-          <div className="form-group">
-            <label className="form-label">Name:</label>
-            <input 
-              type="text" 
-              value={name} 
-              onChange={handleNameChange} 
-              className="form-input" 
-            />
-          </div>
+          
+  <div className="form-group">
+<label className="form-label">Name:</label>
+<input 
+  type="text" 
+  name="name"
+  value={name}
+  onChange={e => setName(e.target.value)} 
+  className="form-input" 
+/>
+</div>
           <div className="form-group">
             <label className="form-label">Image:</label>
             <input 
               type="file" 
-              accept="image/*" 
-              onChange={handleImageChange} 
+              name="image"
+              onChange={e=> setFile(e.target.files[0])} 
               className="form-input" 
             />
           </div>
@@ -70,3 +64,16 @@ function ParticipationRequestForm() {
 }
 
 export default ParticipationRequestForm;
+
+
+
+{/* <div className="form-group">
+<label className="form-label">Name:</label>
+<input 
+  type="text" 
+  name="name"
+  value={formData.name} 
+  onChange={handleInputChange} 
+  className="form-input" 
+/>
+</div> */}
